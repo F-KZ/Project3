@@ -1,12 +1,14 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv'
+dotenv.config()
 
 
-const url = "mongodb+srv://fantasticfranck:green@twitter.ueclytj.mongodb.net/PR3"
+
 
  const connectDatabase = async () => {
     try {
         mongoose.set('strictQuery', false)
-        const connect = await mongoose.connect(url)
+        const connect = await mongoose.connect(process.env.URL)
         console.log(`Mongoose connect : ${connect.connection.host}`);
         
     } catch (error) {
