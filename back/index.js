@@ -12,7 +12,7 @@ import userRoutes from './routes/userRoutes.js'
 connectDatabase()
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: true }));
+app.use(cors());
 
 // Routes
 app.use('/api/products', productRoutes)

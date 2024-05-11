@@ -18,7 +18,7 @@ import { BsPhoneFlip } from 'react-icons/bs';
 const LandingScreen = () => (
 	<Box maxW='8xl' mx='auto' p={{ base: '0', lg: '12' }} minH='6xl'>
 		<Stack direction={{ base: 'column-reverse', lg: 'row' }} spacing={{ base: '0', lg: '20' }}>
-			<Bo
+			<Box
 			
 				width={{ lg: 'sm' }}
 				transform={{ base: 'translateY(-50%)', lg: 'none' }}
@@ -45,7 +45,7 @@ const LandingScreen = () => (
 						<Icon color={mode('cyan.500', 'yellow.200')} as={FaArrowRight} />
 					</HStack>
 				</Stack>
-			</Bo>
+			</Box>
 			<Flex flex='1' overflow='hidden'>
 				<Image
 					src={mode('images/landing-light.jpg', 'images/landing-dark.jpg')}

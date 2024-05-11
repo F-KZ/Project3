@@ -4,7 +4,7 @@ import { setError, setLoading, setShippingCosts, cartItemAdd, cartItemRemoval, c
 export const addCartItem = (id, qty) => async (dispatch) => {
 	dispatch(setLoading(true));
 	try {
-		const { data } = await axios.get(` http://localhost:3001/api/products/${id}`);
+		const { data } = await axios.get(` https://project3-liard-pi.vercel.app/api/products/${id}`);
 		const itemToAdd = {
 			id: data._id,
 			name: data.name,

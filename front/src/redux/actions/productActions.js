@@ -69,7 +69,7 @@ export const toggleFavorites = (toggle) => async (dispatch, getState) => {
 export const getProduct = (id) => async (dispatch) => {
 	dispatch(setLoading(true));
 	try {
-		const { data } = await axios.get(`http://localhost:3001/api/products/${id}`);
+		const { data } = await axios.get(`https://project3-liard-pi.vercel.app/api/products/${id}`);
 		dispatch(setProduct(data));
 	} catch (error) {
 		dispatch(
@@ -91,7 +91,7 @@ export const createProductReview = (productId, userId, comment, rating, title) =
 	try {
 		const config = { headers: { Authorization: `Bearer ${userInfo.token}`, 'Content-Type': 'application/json' } };
 
-		await axios.post(`http://localhost:3001/api/products/reviews/${productId}`, { comment, userId, rating, title }, config);
+		await axios.post(`https://project3-liard-pi.vercel.app/api/products/reviews/${productId}`, { comment, userId, rating, title }, config);
 		dispatch(productReviewed(true));
 	} catch (error) {
 		dispatch(
