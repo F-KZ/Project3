@@ -14,7 +14,7 @@ import axios from 'axios';
 export const getProducts = (page, favouriteToggle) => async (dispatch) => {
 	dispatch(setLoading());
 	try {
-		const { data } = await axios.get(`http://localhost:3001/api/products/${page}/${10}`);
+		const { data } = await axios.get(`https://project3-nna9048uf-fkz.vercel.app/api/products/${page}/${10}`);
 		const { products, pagination } = data;
 		dispatch(setProducts(products));
 		dispatch(setPagination(pagination));
