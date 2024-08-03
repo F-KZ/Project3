@@ -16,7 +16,10 @@ import { BASE_URL } from '../constants';
 export const getProducts = (page, favouriteToggle) => async (dispatch) => {
 	dispatch(setLoading());
 	try {
-		const { data } = await axios.get(`${BASE_URL}/api/products/${page}/${10}`);
+		const config = { headers: {'Content-Type': 'application/json'},
+		withCredentials: true };
+		const { data } = await axios.get(`${BASE_URL}/api/products/${page}/10`, { headers: {'Content-Type': 'application/json'},
+			withCredentials: true });
 		const { products, pagination } = data;
 		dispatch(setProducts(products));
 		dispatch(setPagination(pagination));
@@ -71,7 +74,12 @@ export const toggleFavorites = (toggle) => async (dispatch, getState) => {
 export const getProduct = (id) => async (dispatch) => {
 	dispatch(setLoading(true));
 	try {
-		const { data } = await axios.get(`${BASE_URL}/api/products/${id}`);
+		const { data } = await axios.get(`${BASE_URL}/api/products/${id}`
+			, {
+				headers: { "Content-Type": "application/json" },
+				withCredentials: true, // Correct way to include credentials
+			  }
+		);
 		dispatch(setProduct(data));
 	} catch (error) {
 		dispatch(
@@ -91,7 +99,10 @@ export const createProductReview = (productId, userId, comment, rating, title) =
 		user: { userInfo },
 	} = getState();
 	try {
-		const config = { headers: { Authorization: `Bearer ${userInfo.token}`, 'Content-Type': 'application/json' } };
+		const config = { headers: { Authorization: `Bearer ${userInfo.token}`, 
+			'Content-Type': 'application/json',
+		 },
+		withCredentials: true };
 
 		await axios.post(`${BASE_URL}/api/products/reviews/${productId}`, { comment, userId, rating, title }, config);
 		dispatch(productReviewed(true));

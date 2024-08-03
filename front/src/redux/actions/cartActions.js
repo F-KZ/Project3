@@ -5,7 +5,8 @@ import { setError, setLoading, setShippingCosts, cartItemAdd, cartItemRemoval, c
 export const addCartItem = (id, qty) => async (dispatch) => {
 	dispatch(setLoading(true));
 	try {
-		const { data } = await axios.get(` ${BASE_URL}/api/products/${id}`);
+		const config = { headers: { 'Content-Type': 'application/json' }, withCredentials: true };
+		const { data } = await axios.get(` ${BASE_URL}/api/products/${id}`, config);
 		const itemToAdd = {
 			id: data._id,
 			name: data.name,

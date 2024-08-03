@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3001"; // If using proxy
+export const BASE_URL = "https://project3-back.vercel.app"; // If using proxy
 export const PRODUCTS_URL = "/api/products";
 export const USERS_URL = '/api/users';
 export const ORDERS_URL = '/api/orders';

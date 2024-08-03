@@ -17,7 +17,7 @@ import { clearCart } from '../slices/cart';
 export const login = (email, password) => async (dispatch) => {
 	dispatch(setLoading(true));
 	try {
-		const config = { headers: { 'Content-Type': 'application/json' } };
+		const config = { headers: { 'Content-Type': 'application/json' }, withCredentials: true };
 
 		const { data } = await axios.post(`${BASE_URL}/users/login`, { email, password }, config);
 
