@@ -31,7 +31,7 @@ function App() {
 		},
 	});
 
-	const [googleClient, setGoogleClient] = useState(null);
+	{ /* const [googleClient, setGoogleClient] = useState(null);
 	useEffect(() => {
 		const googleKey = async () => {
 			const { data: googleId } = await axios.get('/api/config/google');
@@ -39,15 +39,16 @@ function App() {
 		};
 		googleKey();
 	}, [googleClient]);
+	*/}
 
 	return (
 		<ChakraProvider theme={theme}>
-			{!googleClient ? (
+			{ /*{!googleClient ? (
 				<VStack pt='37vh'>
 					<Spinner mt='20' thickness='2px' speed='0.65s' emptyColor='gray.200' color='cyan.500' size='xl' />
 				</VStack>
 			) : (
-				<GoogleOAuthProvider clientId={googleClient}>
+				<GoogleOAuthProvider clientId={googleClient}> */}
 					<Router>
 						<Header />
 						<main>
@@ -69,8 +70,8 @@ function App() {
 						</main>
 						<Footer />
 					</Router>
-				</GoogleOAuthProvider>
-			)}
+				{ /*</GoogleOAuthProvider>
+			)} */}
 		</ChakraProvider>
 	);
 }

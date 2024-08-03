@@ -17,10 +17,8 @@ app.use(cors());
 
 // CORS configuration
 
-const allowedOrigins = [
-    'http://localhost:5173',
-    "https://project3-back.vercel.app"
-  ];
+const allowedOrigins = "https://project3-back.vercel.app"
+  
   
   const corsOptions = {
     origin: function (origin, callback) {
