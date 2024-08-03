@@ -70,10 +70,10 @@ const Footer = () => (
 			<Divider />
 			<Stack pt='8' pb='12' justify='space-between' direction={{ base: 'column-reverse', md: 'row' }} align='center'>
 				<Text fontSize='sm' color='subtle'>
-					&copy; {new Date().getFullYear()} Tech Lines, Inc. All rights reserved.
+					&copy; {new Date().getFullYear()} Made with love by Franck Kanza, All rights reserved.
 				</Text>
 				<ButtonGroup variant='ghost'>
-					<IconButton as='a' href='#' icon={<FaLinkedin fontSize='1.25rem' />} />
+					<IconButton as='a' href='https://www.linkedin.com/in/franck-kanza-6849b4195/' icon={<FaLinkedin fontSize='1.25rem' />} />
 					<IconButton as='a' href='#' icon={<FaGithub fontSize='1.25rem' />} />
 					<IconButton as='a' href='#' icon={<FaFacebook fontSize='1.25rem' />} />
 				</ButtonGroup>

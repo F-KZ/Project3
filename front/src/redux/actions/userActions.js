@@ -10,6 +10,7 @@ import {
 	verificationEmail,
 	stateReset,
 } from '../slices/user';
+import {BASE_URL} from '../constants'
 
 import { clearCart } from '../slices/cart';
 
@@ -18,7 +19,7 @@ export const login = (email, password) => async (dispatch) => {
 	try {
 		const config = { headers: { 'Content-Type': 'application/json' } };
 
-		const { data } = await axios.post('https://project3-liard-pi.vercel.app/users/login', { email, password }, config);
+		const { data } = await axios.post(`${BASE_URL}/users/login`, { email, password }, config);
 
 		dispatch(userLogin(data));
 		localStorage.setItem('userInfo', JSON.stringify(data));

@@ -1,21 +1,24 @@
+// src/components/Products.js
 import {
-	Box,
-	Flex,
-	Heading,
-	HStack,
-	Icon,
-	Image,
-	Link,
-	Skeleton,
-	Stack,
-	useColorModeValue as mode,
-	Text,
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  Icon,
+  Image,
+  Link,
+  Skeleton,
+  Stack,
+  useColorModeValue as mode,
+  Text
 } from '@chakra-ui/react';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link as ReactLink } from 'react-router-dom';
 import { BsPhoneFlip } from 'react-icons/bs';
 
+
 const LandingScreen = () => (
+	
 	<Box maxW='8xl' mx='auto' p={{ base: '0', lg: '12' }} minH='6xl'>
 		<Stack direction={{ base: 'column-reverse', lg: 'row' }} spacing={{ base: '0', lg: '20' }}>
 			<Box
@@ -47,6 +50,7 @@ const LandingScreen = () => (
 				</Stack>
 			</Box>
 			<Flex flex='1' overflow='hidden'>
+
 				<Image
 					src={mode('images/landing-light.jpg', 'images/landing-dark.jpg')}
 					fallback={<Skeleton />}
@@ -61,3 +65,4 @@ const LandingScreen = () => (
 );
 
 export default LandingScreen;
+ 

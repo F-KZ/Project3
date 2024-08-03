@@ -19,7 +19,7 @@ app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
 
 app.get('/', (req, res) => {
-    res.send('Api is running...')
+    res.send('Api PR3...')
 })
 
 const port = 3001
