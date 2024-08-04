@@ -39,6 +39,8 @@ const allowedOrigins = [
   // Handle preflight requests for all routes
   app.options('*', cors(corsOptions));
 
+
+
 // Routes
 app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
