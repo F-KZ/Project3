@@ -15,19 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // CORS configuration
-const allowedOrigins = [
-    'http://localhost:5173',
-    'https://project3-back.vercel.app'
-  ];
-  app.use(cors(allowedOrigins));
-
-// Routes
-app.use('/api/products', productRoutes)
-app.use('/api/users', userRoutes)
-
-app.get('/', (req, res) => {
-    res.send('Api PR3...')
-})
+app.use(cors())
 
 const port = 3001
 app.listen(port, () => {
