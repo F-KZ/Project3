@@ -23,6 +23,10 @@ app.use(cors({
 app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
 
+app.get('/', (req, res) => {
+    res.send('Api PR3...')
+})
+
 const port = 3001
 app.listen(port, () => {
     console.log(`server on http://localhost:${port}/`);
