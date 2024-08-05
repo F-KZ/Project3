@@ -16,7 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS configuration
 
-const allowedOrigins = 'https://project3-back.vercel.app'
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://project3-back.vercel.app/'
+  ];
   
   const corsOptions = {
     origin: function (origin, callback) {
@@ -39,7 +42,7 @@ const allowedOrigins = 'https://project3-back.vercel.app'
 
 
 // Routes
-app.use('/api/products', productRoutes)
+app.use('api/products', productRoutes)
 app.use('/api/users', userRoutes)
 
 app.get('/', (req, res) => {
