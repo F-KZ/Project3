@@ -1,5 +1,4 @@
 import dotenv from 'dotenv'
-dotenv.config()
 import connectDatabase from './database.js'
 import express from 'express'
 import cors from 'cors'
@@ -9,8 +8,9 @@ import cors from 'cors'
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 
-connectDatabase()
 const app = express();
+dotenv.config()
+connectDatabase()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
