@@ -16,8 +16,8 @@ import { BASE_URL } from '../constants';
 export const getProducts = (page, favouriteToggle) => async (dispatch) => {
 	dispatch(setLoading());
 	try {
-		const config = { headers: {'Content-Type': 'application/json'},
-		withCredentials: true };
+		const config = {  headers: { "Content-Type": "application/json" },
+        credentials: "include", };
 		const { data } = await axios.get(`${BASE_URL}/api/products/${page}/10`,config);
 		const { products, pagination } = data;
 		dispatch(setProducts(products));
