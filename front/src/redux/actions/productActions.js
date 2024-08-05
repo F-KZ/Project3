@@ -18,7 +18,7 @@ export const getProducts = (page, favouriteToggle) => async (dispatch) => {
 	try {
 		const config = {  headers: { "Content-Type": "application/json" },
         credentials: "include", };
-		const { data } = await axios.get(`${BASE_URL}/api/products/${page}/10`,config);
+		const { data } = await axios.get(`${BASE_URL}/api/products/${page}/10`);
 		const { products, pagination } = data;
 		dispatch(setProducts(products));
 		dispatch(setPagination(pagination));

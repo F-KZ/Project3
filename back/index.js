@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://project3-back.vercel.app/'
+    'https://project3-back.vercel.app'
   ];
   
   const corsOptions = {
