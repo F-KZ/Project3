@@ -16,9 +16,11 @@ import { BASE_URL } from '../constants';
 export const getProducts = (page, favouriteToggle) => async (dispatch) => {
 	dispatch(setLoading());
 	try {
-		const config = {  headers: { "Content-Type": "application/json" },
-        credentials: "include", };
-		const { data } = await axios.get(`${BASE_URL}/api/products/${page}/10`);
+		const config = { 
+			headers: { "Content-Type": "application/json" },
+			withCredentials: true 
+		};
+		const { data } = await axios.get(`${BASE_URL}/api/products/${page}/10`, config);
 		const { products, pagination } = data;
 		dispatch(setProducts(products));
 		dispatch(setPagination(pagination));
@@ -29,12 +31,11 @@ export const getProducts = (page, favouriteToggle) => async (dispatch) => {
 					? error.response.data.message
 					: error.message
 					? error.message
-					: 'An expected error has occured. Please try again later.'
+					: 'An expected error has occurred. Please try again later.'
 			)
 		);
 	}
 };
-
 export const addToFavorites = (id) => async (dispatch, getState) => {
 	const {
 		product: { favorites },
