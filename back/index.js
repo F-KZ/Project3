@@ -15,15 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // CORS configuration
-const allowedOrigin = [ 'project3-front-chi.vercel.app', 'https://project3-back.vercel.app']
-const corsOptions = {
-    origin: allowedOrigin, // Replace with your frontend's origin
-    methods: 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
-    allowedHeaders: 'Content-Type, Authorization',
-    credentials: true,
-  };
   
-  app.use(cors(corsOptions));
+  app.use(cors());
 
 
 // Routes
