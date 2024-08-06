@@ -11,7 +11,7 @@ build/
 dist/
 
 # Ignorer les fichiers de configuration spécifiques à l'environnement
-
+.env
 
 # Editor directories and files
 .vscode/*

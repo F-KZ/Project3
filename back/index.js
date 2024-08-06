@@ -15,7 +15,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // CORS configuration
-app.use(cors())
+const corsOptions = {
+    origin: '*', // Replace with your frontend's origin
+    methods: 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+    allowedHeaders: 'Content-Type, Authorization',
+    credentials: true,
+  };
+  
+  app.use(cors(corsOptions));
 
 
 // Routes
