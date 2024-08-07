@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProductCard from '../components/ProductCard';
 import { getProducts } from '../redux/actions/productActions';
 import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
+import Loader from '../components/Loader';
 
 const ProductsScreen = () => {
 	const dispatch = useDispatch();
@@ -16,6 +17,8 @@ const ProductsScreen = () => {
 	const paginationButtonClick = (page) => {
 		dispatch(getProducts(page));
 	};
+
+	if(products === 'pending') return <Loader/>
 
 	return (
 		<>

@@ -19,8 +19,20 @@ import YourOrdersScreen from './screens/YourOrdersScreen';
 import CancelScreen from './screens/CancelScreen';
 import SuccessScreen from './screens/SuccessScreen';
 import AdminConsoleScreen from './screens/AdminConsoleScreen';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+	useEffect(() => {
+		AOS.init({
+		  offset: 100,
+		  duration: 800,
+		  easing: "ease-in-sine",
+		  delay: 100,
+		});
+		AOS.refresh();
+	  }, []);
+	  
 	const theme = extendTheme({
 		styles: {
 			global: (props) => ({

@@ -22,7 +22,7 @@ const LandingScreen = () => (
 	<Box maxW='8xl' mx='auto' p={{ base: '0', lg: '12' }} minH='6xl'>
 		<Stack direction={{ base: 'column-reverse', lg: 'row' }} spacing={{ base: '0', lg: '20' }}>
 			<Box
-			
+			 zIndex='1'
 				width={{ lg: 'sm' }}
 				transform={{ base: 'translateY(-50%)', lg: 'none' }}
 				bg={{ base: mode('cyan.50', 'gray.700'), lg: 'transparent' }}
@@ -52,6 +52,10 @@ const LandingScreen = () => (
 			<Flex flex='1' overflow='hidden'>
 
 				<Image
+				 data-aos='zoom-in'
+          data-aos-duration='1500'
+          data-aos-once='false'
+				
 					src={mode('images/landing-light.jpg', 'images/landing-dark.jpg')}
 					fallback={<Skeleton />}
 					maxH='550px'

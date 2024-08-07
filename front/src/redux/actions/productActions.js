@@ -74,12 +74,11 @@ export const toggleFavorites = (toggle) => async (dispatch, getState) => {
 export const getProduct = (id) => async (dispatch) => {
 	dispatch(setLoading(true));
 	try {
-		const { data } = await axios.get(`${BASE_URL}/api/products/${id}`
-			, {
-				headers: { "Content-Type": "application/json" },
-				withCredentials: true, // Correct way to include credentials
-			  }
-		);
+		const config = { 
+			headers: { "Content-Type": "application/json" },
+			withCredentials: true 
+		};
+		const { data } = await axios.get(`${BASE_URL}/api/products/${id}`,config);
 		dispatch(setProduct(data));
 	} catch (error) {
 		dispatch(
