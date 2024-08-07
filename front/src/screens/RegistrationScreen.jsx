@@ -46,7 +46,8 @@ const RegistrationScreen = () => {
 		}
 	}, [userInfo, redirect, error, navigate, toast]);
 
-	const handleGoogleLogin = useGoogleLogin({
+	{
+		/*const handleGoogleLogin = useGoogleLogin({
 		onSuccess: async (response) => {
 			const userInfo = await axios
 				.get('https://www.googleapis.com/oauth2/v3/userinfo', {
@@ -57,6 +58,7 @@ const RegistrationScreen = () => {
 			dispatch(googleLogin(sub, email, name, picture));
 		},
 	});
+	*/}
 
 	return (
 		<Formik

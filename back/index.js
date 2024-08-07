@@ -13,10 +13,13 @@ dotenv.config()
 connectDatabase()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://project3-front-chi.vercel.app'
+  ];
 // CORS configuration
 const corsOptions = {
-    origin: 'https://project3-front-chi.vercel.app', // Replace with your frontend's origin
+    origin: allowedOrigins, // Replace with your frontend's origin
     methods: 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
     allowedHeaders: 'Content-Type, Authorization',
     credentials: true,

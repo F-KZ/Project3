@@ -58,8 +58,8 @@ const LoginScreen = () => {
 			});
 		}
 	}, [userInfo, redirect, error, navigate, location.state, toast, showPasswordReset, serverMsg]);
-
-	const handleGoogleLogin = useGoogleLogin({
+	 
+	{ /* const handleGoogleLogin = useGoogleLogin({
 		onSuccess: async (response) => {
 			const userInfo = await axios
 				.get('https://www.googleapis.com/oauth2/v3/userinfo', {
@@ -70,7 +70,7 @@ const LoginScreen = () => {
 			dispatch(googleLogin(sub, email, name, picture));
 		},
 	});
-
+ */}
 	return (
 		<Formik
 			initialValues={{ email: '', password: '' }}
