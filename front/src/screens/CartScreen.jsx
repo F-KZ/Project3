@@ -18,8 +18,10 @@ import { useSelector } from 'react-redux';
 import CartItem from '../components/CartItem';
 import OrderSummary from '../components/OrderSummary';
 
+
 const CartScreen = () => {
 	const { loading, error, cartItems } = useSelector((state) => state.cart);
+	
 
 	const getHeadingContent = () => (cartItems.length === 1 ? '(1 Item)' : `(${cartItems.length} Items)`);
 
